@@ -7,7 +7,7 @@ const emailInput = document.querySelector('#email');
 const msg = document.querySelector('.msg');
 
 
-// Listen for form submit
+// Listen for form submit ok this is edit
 myForm.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
