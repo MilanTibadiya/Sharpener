@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <form onsubmit="saveToLocalStorage(event)">
+            <label>Name</label>
+            <input type="text" name="username" required/>
+            <label>EmailId</label>
+            <input type="email" name="emailid" required/>
+            <button> SUBMIT </button>
+        </form>
+        <ul id="listOfUsers"></ul>
+    </body>
+
+    <script>
+        // const name = document.querySelector('#username');
+        // const email= document.querySelector('#emailid');;
+
+        function saveToLocalStorage(event){
+            event.preventDefault();
+            const name = event.target.username.value;
+            const email= event.target.emailid.value;
+
+            // localStorage.setItem('name', name);
+            // localStorage.setItem('email', email);
+
+            const obj = {
+                name: name,
+                email: email
+            }
+            // localStorage.setItem('userDetails', JSON.stringify(obj));
+            //give unique user name for every one so, data is not replace its store
+            localStorage.setItem(obj.email, JSON.stringify(obj));
+            showNewUserOnScreen(obj);
+        }
+
+        function showNewUserOnScreen(user){
+            const parentNode = document.getElementById("listOfUsers");
+            const childHTML = `<li>${user.name} ==> ${user.email} </li>`
+
+            parentNode.innerHTML = parentNode.innerHTML + childHTML;
+        }
+    
+
+
+// Object.keys(localStorage).forEach((key) => {
+// stringifiedDetailsOfPeople = localStorage.getItem(key);
+// detailsOfPeople = JSON.parse(stringifiedDetailsOfPeople);
+// addNewLineElement(detailsOfPeople);
+// });
+
+
+    </script>
+</html>
