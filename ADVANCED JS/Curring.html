@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi!..</h1>
+    <script>
+     // curring in js
+     // bty 2 method -> 1. to using buying fun, 2.with using closure function
+
+     // 1
+     let multiply = function(x, y){   // method-1
+        console.log(x * y);
+     }
+
+     let multiplyByTwo = multiply.bind(this, 2); //referb to x
+     multiplyByTwo(5); //its refre to y
+     //o/p is 10
+
+     let multiplyByThree = multiply.bind(this, 3, 1); //referb to x
+     multiplyByThree(5);
+     // 3 or
+
+
+     let multiplyByTh = multiply.bind(this, 3, 1); //referb to x
+     multiplyByThree(5);
+     // o/p 3 its ignor 5 because its has val of 3,1 already
+
+     let multiplyByThre = multiply.bind(this );
+
+     // 2 ufun enclosure
+
+     let multiplyf = function(x){
+        return function(y){
+            console.log(x * y);       // x preset val 
+        }
+     }
+
+     let multiplyByfun = multiplyf(2);
+     multiplyByfun(4);
+     //o/p = 8
+    </script>
+</body>
+</html>
