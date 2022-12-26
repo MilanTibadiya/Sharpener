@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi!..</h1>
+    <script>
+
+class student{
+constructor(name,age,marks){
+   this.name=name;
+   this.age=age;
+   this.marks=marks;
+}
+eligible(minplacementAge){
+
+    return (minMarks) => {
+        if(this.marks > minMarks && this.age > minplacementAge){
+            console.log(this.name + ' is ready for placement')
+        }else{
+            console.log(this.name + ' is not ready for placement')
+        }
+    }
+  }
+}
+
+const Milan = new student('milan', 24, 80);
+const Vikesh = new student('vikesh',18, 75);
+
+Milan.eligible(20)(40);
+Vikesh.eligible(20)(40);
+       </script>
+</body>
+</html>
