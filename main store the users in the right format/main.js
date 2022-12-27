@@ -22,17 +22,13 @@ function onSubmit(e) {
     setTimeout(() => msg.remove(), 3000);
   } else { 
        // store user name in local storage   &&&&& EVERY TIME KEY,VALUE PAIR IN KEY DIIFT SO ITS STORE IN IT DIGFF
-   localStorage.setItem('name',nameInput.value);
-   localStorage.setItem('email',emailInput.value);
- 
-   const obj = {
-    name: name,
-    email : email
-   }
-   localStorage.setItem('userDetails', JSON.stringify(obj));
+   localStorage.setItem(nameInput.value,emailInput.value );
+
+    // Add text node with input values
+   console.log(`${nameInput.value}: ${emailInput.value}`);
 
     // Clear fields
-    // nameInput.value = '';/
-    // emailInput.value = '';
+    nameInput.value = '';
+    emailInput.value = '';
   }
 }
