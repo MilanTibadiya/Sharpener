@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.all </title>
+</head>
+<body>
+    <p>Promise.all </p>
+
+    <script>
+        //Promise.all  use for execute all promise toghetherri9in diffnt way
+// i dont know in this 1 task, doit later but mush complete find anyway, its in forward u cant do it if u can not do this
+        const promise1 = Promise.resolve('hi dev');
+        const promise2 = 11;
+        const promise3 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 2000, 'goodbye')
+        });
+
+    Promise.all([promise1, promise2, promise3]).then( (values) => {
+        console.log(values);
+    })
+
+    //
+    const user = {
+        username : 'milan',
+        lastactivitytime : '29 dec'
+    }
+
+    updatepost(){
+        Promise.all([createpost, lastactivitytime]).then(([data1, data2]) => {
+            console.log()
+        })
+    }
+
+    </script>
+</body>
+</html>
