@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-7 = Promises</title>
+</head>
+<body>
+    <h1>hai</h1>
+
+    <script>
+        //make a promises using asyns & wait(its always use in asyns)
+        console.log('person1: shows ticket');
+        console.log('person2: shows ticket');
+
+        //person 3 wait in side, because its ticket (wife......)
+       const preMovie = async () => {
+        const promiseWifeBringingTicks = new Promise ((resolve, reject) =>{
+            setTimeout(() => resolve('ticket'), 3000); 
+        });
+
+        const getPopcorn = new Promise((resolve, reject) => resolve(`popcorn`));
+        const addButter = new Promise((resolve, reject) => resolve(`butter`));
+        const getColdDrinks = new Promise((resolve, reject) => resolve(`ColdDrinks`));
+
+        let ticket = await promiseWifeBringingTicks; 
+
+        console.log(`wife: i have the ${ticket}`);
+            console.log('husband: we should go in');
+            console.log('wife: no i am hungry');
+
+        let popcorn = await getPopcorn;
+
+        console.log(`husband: i got some ${popcorn}`);
+            console.log('husband: we should go now');
+            console.log('wife: i need butter on my popcorb');
+
+        let butter = await addButter;
+
+        console.log(`husband: i got some ${butter} on popcorn`);
+        console.log(`husband: ohh what about coldrink`);
+
+        let coldDrinks = await getColdDrinks;
+        console.log(`husband: wait i brought ${coldDrinks}`);
+            console.log('ok.done')
+
+        return ticket;
+       }
+
+       preMovie().then((m) => console.log(`person3: shows ${m}`))
+
+
+        console.log('person4: shows ticket');
+        console.log('person5: shows ticket');
+
+    </script>
+</body>
+</html>

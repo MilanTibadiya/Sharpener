@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-7 = Promises</title>
+</head>
+<body>
+    <h1>hai</h1>
+
+    <script>
+        //make a promises simply
+        console.log('person1: shows ticket');
+        console.log('person2: shows ticket');
+
+        //person 3 wait in side, because its ticket (wife......)
+        const promiseWifeBringingTicks = new Promise ((resolve, reject) =>{
+            setTimeout(() => {
+                resolve('ticket')
+            }, 3000);
+        });
+        //1 another promise
+        const getPopcorn = promiseWifeBringingTicks.then((t)=>{
+            console.log('wife: i have the ticks');
+            console.log('husband: we should go in');
+            console.log('wife: no i am hungry');
+            return new Promise((resolve, reject) => resolve(`${t} popcorn`));
+        });
+        //new promise
+        const getButter = getPopcorn.then((t)=>{
+            console.log('husband: i got some popcorn');
+            console.log('husband: we should go now');
+            console.log('wife: i need butter on my popcorb');
+            return new Promise((resolve, reject) => resolve(`${t} butter`)); 
+        });
+        const getColdDrinks = getButter.then((t) => {
+            console.log('husband: wait i brought cold drins');
+            console.log('ok.done')
+            return new Promise((resolve, reject) => resolve(`${t} coldDrinks`));
+        })
+        getColdDrinks.then((t) => console.log(t));
+
+
+
+        console.log('person4: shows ticket');
+        console.log('person5: shows ticket');
+
+    </script>
+</body>
+</html>
