@@ -31,7 +31,7 @@ function App() {
       date: new Date(2023, 1, 2),
     },
   ];
-  //just - Task for use of loop 
+  //just - Task for use of loopp
   let a =[]
   for(var i=0; i<10; i++){
     a.push(<div className="expense-item">
@@ -45,7 +45,7 @@ function App() {
   
   return (
     <div>
-      {a}
+      { a }
       <h2>Let's get started!</h2>
       <ExpenseItem
         title={expenses[0].title}
