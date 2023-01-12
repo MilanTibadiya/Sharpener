@@ -29,7 +29,7 @@ function App() {
       location: "loc-abc",
       amount: 120,
       date: new Date(2023, 1, 2),
-    },
+    }
   ];
   //just - Task for use of loopp
   let a =[]
@@ -45,7 +45,7 @@ function App() {
   
   return (
     <div>
-      { a }
+      {a}
       <h2>Let's get started!</h2>
       <ExpenseItem
         title={expenses[0].title}
